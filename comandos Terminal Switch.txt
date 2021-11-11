@@ -1,0 +1,26 @@
+en-enable: modo de execuçao
+	dis-disable: sai do modo de execução
+		exit: sai de tudo
+			Configure Terminal: Modo de configuração global
+				Hostname: Nomear Dispositivos
+					CtrL + Z: reverte
+						copy running-config startup-config: salva as configurações opção 1
+							wr-write: salva as configurações 
+								service password-encryption: coloca senha
+									no ip domain-lookup: desativa modo pensante
+										#banner motd #AVISO: Acesso autorizado somente para funcionarios#: adciona um texto de aviso	
+												enable secret 123@senac: habilita senha
+													username Senac secret 123@senac: habilita usuario e senha
+														line console 0: entra na configuração da linha
+															login local: procura os usuarios locais
+																logging synchronous: sincronismo
+																	password 123@senac: habilita senha 
+																			exec-timeout 5 30: configura para sair do usuario
+																				ctrl-C: volta para apenas enable
+																					copy running-config startup-config: salva as configurações 
+																					
+																
+															
+													
+											
+									
