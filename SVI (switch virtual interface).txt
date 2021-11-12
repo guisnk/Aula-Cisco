@@ -1,0 +1,23 @@
+SVI (switch virtual interface)
+	
+	configure terminal
+		ip default-gateway 192.168.0.254
+		interface vlan 1
+		description Interface SVI VLAN-1
+		ip address 192.168.0.250 255.255.255.0
+		no shutdown
+		end
+		show ip interface brief
+		show vlan brief 
+===============================================================================================
+
+		configure terminal
+			ip domain-name senac.tat
+			crypto key generate rsa general-keys 
+			crypto key generate rsa general-keys modulus 1024
+			ip ssh version 2
+			ip ssh time-out 60
+			ip ssh authentication-retries 2
+			end
+			write
+			show running-config
