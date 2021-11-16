@@ -1,0 +1,22 @@
+
+	MAC Adress: só pode existir UM na rede
+				não pode existir DOIS IGUAIS 
+	Endereço IPv4:
+	Hostname:
+	
+	
+	
+	
+	
+	comando para logar seguro: ssh -L senac 192.168.0.250 ssh -L senac 192.168.0.251
+	
+	(comandos para fazer beckup do switch e roteador)
+	
+	enable
+	Show Flash:
+	Copy running-config startup-config 
+	copy running-config Flash:
+	Show Flash:
+	copy running-config tftp: 192.168.0.10
+	exit
+	dir
