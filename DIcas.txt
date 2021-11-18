@@ -1,0 +1,5 @@
+regra
+
+todo e qualquer equipamento na rede que fornece serviços na rede tem que ter o endereço ip Statico
+
+só pode exitir 1 servidor DHCP na rede, se nao eles entram em conflito

@@ -1,0 +1,6 @@
+resetar os comandos
+
+enable 
+	erase startup-config
+	reload
+	
