@@ -1,0 +1,80 @@
+Redes 22/11/2021
+	
+	
+	Classes De IPv4: morreu na decada de 90 e foi dividia em 5 classes ->
+	
+	Classes :
+	
+	A: 0.0.0.0->127.255.255.255 JAMAIS UTILIZAR ENDEREÇOS COMEÇANDO COM (127)
+	B: 128.0.0.0->191.255.255.255 Qualquer IP que começa com (169 Nao Utilizar)
+	C: 192.0.0.0->223.255.255.255 
+	D: 224.0.0.0-> 239.255.255.255 JAMAIS UTILIZAR ENDEREÇOS COMEÇANDO COM (224)
+	E: 240.0.0.0->247.255.255.255
+	
+	# CLASSES PRIVADAS->(SÓ FUNCIONA ITERNAMENTE E PRIORIDADES
+	
+	A: 10.0.0.0->10.255.255.255  MASCARA DE REDE PADRÃO:255.0.0.0 /8
+	B: 172.16.0.0->172.31.255.255 MASCARA DE REDE PADRAO:255.255.0.0 /16
+	C: 192.168.0.0->192.168.255.255 MASCARA DE REDE PADRAO:255.255.255.0 /24
+
+	(Se 2 computadores estiverem conectados na mesma rede fisicamente mas com redes diferentes configuradas em cada pc eles podem se conectar porém não vao se entender
+	(O Gateway é responsavel por Traduzir e Pela comunicação entre os dois Pcs) - Quando Os dois pcs tiverem a mesma rede, Não é necessario O Tradutor(Gateway)
+	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+	CONFIGURAÇÃO PARA ATIVAR A LIGAÇÃO DE UM ROTEADOR NO OUTRO
+	
+	Config Routeador 1
+	
+	Enable
+		Configure
+			interface GigabiteEthernet 0/1
+			Descroption Interface De WAN
+			ip address 10.0.0.2 255.255.255.252
+			no shutdown
+			end
+		write
+	show ip interface brief	
+		
+
+	Config Routeador 2
+	
+	Enable
+		Configure
+			interface GigabiteEthernet 0/1
+			Descroption Interface De WAN
+			ip address 10.0.0.1 255.255.255.252
+			no shutdown
+			end
+		write			
+	show ip interface brief
+	
+	
+	
+	
+	
+	Config Routeador 1
+	
+	Enable
+		Configure Terminal
+			ip route 192.168.0.0 10.0.0.2
+			end
+		write			
+	show ip interface brief
+	
+	
+	
+	Config Routeador 2
+	
+	Enable
+		Configure Terminal
+			ip route 192.168.0.0 255.255.255.0 10.0.0.1
+			end
+		write
+	show ip iterface brief
+
+	show ip iterface brief
+	show ip route static
+	
+	
+	
